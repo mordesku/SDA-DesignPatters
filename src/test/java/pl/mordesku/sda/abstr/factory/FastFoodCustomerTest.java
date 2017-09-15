@@ -15,7 +15,7 @@ import static org.junit.Assert.*;
  */
 public class FastFoodCustomerTest {
     @Test
-    public void testWeganMeal() throws Exception {
+    public void shouldCreateWeganMeal() throws Exception {
         FastFoodCustomer customer = new FastFoodCustomer(new WeganMealFactory());
 
         customer.getBurger().open();
@@ -26,7 +26,7 @@ public class FastFoodCustomerTest {
     }
 
     @Test
-    public void testJuicyMeatMeal() throws Exception {
+    public void shouldCreateJuicyMeatMeal() throws Exception {
         FastFoodCustomer customer = new FastFoodCustomer(new MeatMealFactory());
 
         customer.getBurger().open();
