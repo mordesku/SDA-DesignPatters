@@ -7,11 +7,7 @@ import java.util.List;
  * Created by mordesku on 17.09.2017.
  */
 public class ProgramMemory extends Memory {
-    private static ProgramMemory INSTANCE = new ProgramMemory();
-
-    public static ProgramMemory getInstance() {
-        return INSTANCE;
-    }
+    private static ProgramMemory INSTANCE;
 
     private int programCounter = 0;
 
@@ -19,6 +15,13 @@ public class ProgramMemory extends Memory {
 
     private ProgramMemory() {
 
+    }
+
+    public static ProgramMemory getInstance() {
+        if (INSTANCE == null) {
+            INSTANCE = new ProgramMemory();
+        }
+        return INSTANCE;
     }
 
     public int getProgramCounter() {

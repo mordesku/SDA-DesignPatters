@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Created by mordesku on 17.09.2017.
  */
-public class Instructions implements Instruction {
+public class Instructions {
     private List<Instruction> availableInstructions = new ArrayList<>();
 
     public Instructions() {
@@ -16,14 +16,9 @@ public class Instructions implements Instruction {
     private void initInstructions() {
         availableInstructions.add(new PrintInstruction());
         availableInstructions.add(new GoToInstruction());
+        availableInstructions.add(new SetInstruction());
     }
 
-    @Override
-    public boolean isApplicable(String rawInstruction) {
-        return true;
-    }
-
-    @Override
     public void execute(String rawInstruction) {
         for (Instruction availableInstruction : availableInstructions) {
             if (availableInstruction.isApplicable(rawInstruction)) {

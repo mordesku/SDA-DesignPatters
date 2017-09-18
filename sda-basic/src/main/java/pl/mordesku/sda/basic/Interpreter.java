@@ -1,5 +1,6 @@
 package pl.mordesku.sda.basic;
 
+import pl.mordesku.sda.basic.expressions.EvaluateVariableExpression;
 import pl.mordesku.sda.basic.expressions.SimpleMathExpression;
 import pl.mordesku.sda.basic.instructions.Instructions;
 import pl.mordesku.sda.basic.memory.ProgramMemory;
@@ -21,7 +22,7 @@ public class Interpreter {
             String instructionAddress = addresses.get(programMemory.getProgramCounter());
             String instruction = programMemory.get(instructionAddress);
             programMemory.incrementProgramCounter();
-            instruction = new SimpleMathExpression().evaluate(instruction);
+            instruction = new SimpleMathExpression(new EvaluateVariableExpression()).evaluate(instruction);
             instructions.execute(instruction);
         }
 

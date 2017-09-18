@@ -21,12 +21,14 @@ public class GoToInstruction implements Instruction {
     @Override
     public void execute(String rawInstruction) {
         List<String> addresses = programMemory.addresses();
-            int gotoLine = addresses.indexOf(rawInstruction.replaceAll(INSTRUCTION_REGEXP, "$2"));
+        String groupTwo = rawInstruction.replaceAll(INSTRUCTION_REGEXP, "$2");
+        int gotoLine = addresses.indexOf(groupTwo);
             if (gotoLine>=0) {
                 programMemory.setProgramCounter(gotoLine);
             } else {
                 System.out.println("ERROR: LINE NOT FOUND\n\t"+rawInstruction);
                 System.exit(-33);
             }
+        //(SET )(\\$.+)(=)(.+)
     }
 }
