@@ -1,5 +1,7 @@
 package pl.mordesku.sda.samples.proxy;
 
+import pl.mordesku.sda.samples.proxy.other.datasource.SomeOtherDatasourceAdapter;
+
 /**
  * Created with notepad.exe.
  * Author: mprzybylski
@@ -7,7 +9,7 @@ package pl.mordesku.sda.samples.proxy;
  * Time: 18:54
  */
 public class DataSourceProxy implements DataSource {
-    DatabaseDataSource dataSource = new DatabaseDataSource();
+    DataSource dataSource = new SomeOtherDatasourceAdapter();
     @Override
     public String getData() {
         return dataSource.getData();
