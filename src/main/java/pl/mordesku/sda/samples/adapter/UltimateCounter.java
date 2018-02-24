@@ -8,7 +8,7 @@ package pl.mordesku.sda.samples.adapter;
  */
 public class UltimateCounter {
     private int ultimateCounter = 0;
-    public int ultimateCount() {
-        return ++ultimateCounter;
+    public String ultimateCount() {
+        return "TotalCount: "+String.valueOf(ultimateCounter++);
     }
 }

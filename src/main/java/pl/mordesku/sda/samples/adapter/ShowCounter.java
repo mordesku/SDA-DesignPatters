@@ -2,17 +2,15 @@ package pl.mordesku.sda.samples.adapter;
 
 /**
  * Created with notepad.exe.
- * Author: mprzybylski
- * Date: 2017-09-19
- * Time: 20:23
+ * Author: mprzy
+ * Date: 23.02.2018
+ * Time: 21:06
  */
-public class ShowCounter {
-    public static void main(String[] args) {
-        Counter counterService = new UltimateCounterAdapter();
-        //
-        for (int i = 0; i < 10; i++) {
-            System.out.println(counterService.count());
-        }
+public class ShowCounter implements Counter {
+    private int counter = 0;
 
+    @Override
+    public int count() {
+        return counter++;
     }
 }

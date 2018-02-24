@@ -10,6 +10,6 @@ public class UltimateCounterAdapter implements Counter {
     UltimateCounter ultimateCounter = new UltimateCounter();
     @Override
     public int count() {
-        return ultimateCounter.ultimateCount();
+        return Integer.valueOf(ultimateCounter.ultimateCount().replace("TotalCount: ", ""));
     }
 }
